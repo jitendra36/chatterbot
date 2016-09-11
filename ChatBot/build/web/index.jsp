@@ -9,14 +9,14 @@
   <script src="//code.jquery.com/jquery-latest.js"></script>
   <script src="chat.js"></script>
   <link href="chat.css" rel="stylesheet"/>
-  <title>:: CHATBOT ::</title>
+  <title>:: CHATTERBOT ::</title>
  </head>
  <body>
   <div id="content" style="margin-top:10px;height:100%;">
-   <center><h1>Chat BOT</h1></center>
+   <center><h1>Chatterbot Project - Master Thesis</h1></center>
    <div class="chat">
     <div class="users">
-        <%@include file="users.jsp" %>
+        <%@include file="users.jsp" %>  
      
     </div>
     <div class="chatbox">
