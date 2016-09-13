@@ -10,7 +10,7 @@ String user = session.getAttribute("user").toString();
 %>
 
 <h2>Room For ALL</h2>
- <a class="msg_container" href="logout.jsp">Log Out</a>
+ <a class="msg_container" href="logout.jsp">Clear Log</a>
  <div class='msgs'>
   <%@include file="msgs.jsp" %>
  </div>

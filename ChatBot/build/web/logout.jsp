@@ -4,6 +4,8 @@ String user  = session.getAttribute("user").toString();
 PreparedStatement ps = con.prepareStatement("delete from chatters where name=?");
 ps.setString(1, user);
 ps.executeUpdate();
+PreparedStatement pd = con.prepareStatement("delete from messages");
+pd.executeUpdate();
 session.invalidate();
 response.sendRedirect("index.jsp");
 %>

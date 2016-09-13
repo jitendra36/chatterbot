@@ -15,10 +15,7 @@
   <div id="content" style="margin-top:10px;height:100%;">
    <center><h1>Chatterbot Project - Master Thesis</h1></center>
    <div class="chat">
-    <div class="users">
-        <%@include file="users.jsp" %>  
-     
-    </div>
+    
     <div class="chatbox">
      <%
      try{
