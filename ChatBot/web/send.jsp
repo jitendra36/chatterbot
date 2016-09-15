@@ -137,6 +137,7 @@ else{}
 if(insbot.isEmpty()){
 insbot = "I am so sorry! Please try another one";
 }
+insbot = insbot.replaceAll("\\?"," ");
 PreparedStatement pdf = con.prepareStatement("INSERT INTO messages (name,msg,posted) VALUES (?,?,NOW())");
 pdf.setString(1,"ChatBot");
 pdf.setString(2, insbot);

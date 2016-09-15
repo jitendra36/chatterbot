@@ -13,7 +13,7 @@ public class tagTextToFile {
  
  // Initialize the tagger
 // MaxentTagger tagger = new MaxentTagger("E:\\Web Backups\\stanford-postagger-2015-12-09\\models\\english-left3words-distsim.tagger");
- MaxentTagger tagger = new MaxentTagger("english-left3words-distsim.tagger");
+ MaxentTagger tagger = new MaxentTagger("http://localhost:8084/ChatBot/english-left3words-distsim.tagger");
  
  // The sample string
  String sample = "i can man the controls of this machine";
