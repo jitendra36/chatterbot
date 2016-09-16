@@ -1,31 +1,55 @@
 <%@page import="com.parse.tagTextToFile"%>
 <%
 try{
+//    call connection to used
     %>
 <%@include file="db.jsp" %>
 <%
-String user = session.getAttribute("user").toString();    
-String msg = request.getParameter("msg");
-System.out.println("Got: "+msg);
-PreparedStatement psd = con.prepareStatement("INSERT INTO messages (name,msg,posted) VALUES (?,?,NOW())");
-psd.setString(1, user);
-psd.setString(2, msg);
-psd.executeUpdate();
+String user = session.getAttribute("user").toString();    //get current user
+String msg = request.getParameter("msg"); //get message from user
+System.out.println("Got: "+msg); //system check
+PreparedStatement psd = con.prepareStatement("INSERT INTO messages (name,msg,posted) VALUES (?,?,NOW())"); //prepare SQL query
+psd.setString(1, user); // set placeholder value
+psd.setString(2, msg);  //set placeholder value
+psd.executeUpdate(); //execute SQL query
 
 String msg1 = msg.replaceAll("\\?","");
+
+//fetch priority
+String ands = ""; // hold answer by processing
+Statement ste1 = con.createStatement();
+ResultSet rster1 = ste1.executeQuery("select * from `priorq`"); //select if priority have answers
+while(rster1.next()){   //start fetch loop
+String q = rster1.getString("qq"); //get questions
+if(q.contains(msg1)){ //match is questions contain query
+ands = rster1.getString("ans"); //matched then get answer
+}
+}
+if(!ands.isEmpty()){ //check if answer found
+PreparedStatement pdf = con.prepareStatement("INSERT INTO messages (name,msg,posted) VALUES (?,?,NOW())");
+pdf.setString(1,"ChatBot");
+pdf.setString(2, ands);
+pdf.executeUpdate();
+
+}
+else{
+    //process the query and find opinion target
+
+//else priority processed
+
 System.out.println("Masg1 is: "+msg1);
 if(!msg1.isEmpty()){
     
     //start pos
     
-    tagTextToFile tf = new tagTextToFile();
-                      String tg = tf.tags(msg1);
+    tagTextToFile tf = new tagTextToFile(); //call tegor class to tokenize and tag to query
+                      String tg = tf.tags(msg1); //split
 //                      out.println(tg);
-                      String tp[] = tg.split("\\s");
-                      String noun = "";
-                      String adjec = "";
-                      String verb = "";
-                      for(String s:tp){
+                      String tp[] = tg.split("\\s"); //remove spaces
+                      String noun = ""; //initialize
+                      String adjec = ""; //initialize
+                      String verb = ""; //initialize
+                      for(String s:tp){ //foreach to seperate
                           if(s.contains("_NN")){
                               System.out.println(s);
                               s = s.replaceAll("_NNS", "");
@@ -150,6 +174,7 @@ insbot="";
 msg=null;
 msg1="";
 
+}
 }
 }
 catch(Exception m){

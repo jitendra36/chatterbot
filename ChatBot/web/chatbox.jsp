@@ -1,12 +1,11 @@
 
-<%--<%@include file="db.jsp" %>--%>
-
 <%
+    //view for chat query send
 try{
     %>
-    <%--<%@include file="db.jsp" %>--%>
+
     <%
-String user = session.getAttribute("user").toString();
+String user = session.getAttribute("user").toString(); //get current username
 %>
 
 <h2>Room For ALL</h2>
