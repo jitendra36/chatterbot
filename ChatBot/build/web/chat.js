@@ -11,20 +11,27 @@ function load_new_stuff(){
  $(".users").load("users.jsp");
 }
 $(document).ready(function(){
- scTop();
- $("#msg_form").on("submit",function(){
-  t=$(this);
-  val=$(this).find("input[type=text]").val();
-  if(val!=""){
-   t.after("<span id='send_status'>Sending.....</span>");
-   $.post("send.jsp",{msg:val},function(){
-    load_new_stuff();
-    $("#send_status").remove();
-    t[0].reset();
-   });
-  }
+    scTop();
+    $("#msg_form").on("submit",function(){
+        t=$(this);
+        val=$(this).find("input[type=text]").val();
+        if(val!=""){
+        //checks if value isn't empty
+            $("#send_status").remove();
+            t.after("<span id='send_status'>Sending.....</span>");
+            $.post("send.jsp",{msg:val},function(){
+                load_new_stuff();
+                $("#send_status").remove();
+                t[0].reset();
+            });
+        } 
+        else {
+            $("#send_status").remove();
+            t[0].reset();
+            t.after("<span id='send_status'>Please provide not null input!</span>");
+        };
   return false;
- });
+    });
 });
 setInterval(function(){
  load_new_stuff();

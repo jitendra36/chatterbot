@@ -2,6 +2,20 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/Users/palkers/Documents/masterThesis/chatterbot/ChatBot/web/chatbox.jsp</file>
+            <file>file:/Users/palkers/Documents/masterThesis/chatterbot/ChatBot/web/db.jsp</file>
+            <file>file:/Users/palkers/Documents/masterThesis/chatterbot/ChatBot/web/chat.js</file>
+            <file>file:/Users/palkers/Documents/masterThesis/chatterbot/ChatBot/web/chat.css</file>
+            <file>file:/Users/palkers/Documents/masterThesis/chatterbot/ChatBot/web/send.jsp</file>
+            <file>file:/Users/palkers/Documents/masterThesis/chatterbot/ChatBot/web/jquery-1.11.1.min.js</file>
+            <file>file:/Users/palkers/Documents/masterThesis/chatterbot/ChatBot/web/logout.jsp</file>
+            <file>file:/Users/palkers/Documents/masterThesis/chatterbot/ChatBot/web/msgs.jsp</file>
+            <file>file:/Users/palkers/Documents/masterThesis/chatterbot/ChatBot/src/java/com/parse/tagTextToFile.java</file>
+            <file>file:/Users/palkers/Documents/masterThesis/chatterbot/ChatBot/web/index.jsp</file>
+            <file>file:/Users/palkers/Documents/masterThesis/chatterbot/ChatBot/web/users.jsp</file>
+            <file>file:/Users/palkers/Documents/masterThesis/chatterbot/ChatBot/web/login.jsp</file>
+            <file>file:/Users/palkers/Documents/masterThesis/chatterbot/ChatBot/nbproject/build-impl.xml</file>
+        </group>
     </open-files>
 </project-private>
